@@ -8,11 +8,7 @@ import vuetify from './plugins/vuetify'
 
 Vue.config.productionTip = false
 
-<<<<<<< HEAD
-console.log('eee');
-=======
-console.log('ddd');
->>>>>>> b1
+console.log('fff');
 
 new Vue({
 	router,

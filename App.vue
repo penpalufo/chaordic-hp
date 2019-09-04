@@ -22,11 +22,9 @@
 				dense
 				class="grey lighten-4"
 			>
-<<<<<<< HEAD
-				eee
-=======
-				ddd
->>>>>>> b1
+			
+			fff
+			
 				<v-list-item @click="router_to('./service')">
 					<v-list-item-action><v-icon>add</v-icon></v-list-item-action>
 					<v-list-item-content>
