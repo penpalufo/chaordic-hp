@@ -8,7 +8,11 @@ import vuetify from './plugins/vuetify'
 
 Vue.config.productionTip = false
 
+<<<<<<< HEAD
 console.log('eee');
+=======
+console.log('ddd');
+>>>>>>> b1
 
 new Vue({
 	router,
