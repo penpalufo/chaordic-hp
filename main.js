@@ -8,7 +8,7 @@ import vuetify from './plugins/vuetify'
 
 Vue.config.productionTip = false
 
-console.log('ddd');
+console.log('ccc');
 
 new Vue({
 	router,
