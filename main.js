@@ -8,10 +8,8 @@ import vuetify from './plugins/vuetify'
 
 Vue.config.productionTip = false
 
-/*
- *
- */
- 
+console.log('aaa');
+
 new Vue({
 	router,
 	store,
