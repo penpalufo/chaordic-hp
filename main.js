@@ -8,7 +8,7 @@ import vuetify from './plugins/vuetify'
 
 Vue.config.productionTip = false
 
-console.log('ggg');
+console.log('iii');
 
 new Vue({
 	router,

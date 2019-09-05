@@ -23,7 +23,7 @@
 				class="grey lighten-4"
 			>
 			
-			ggg
+			iii
 
 				<v-list-item @click="router_to('./service')">
 					<v-list-item-action><v-icon>add</v-icon></v-list-item-action>
