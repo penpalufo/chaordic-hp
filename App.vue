@@ -22,8 +22,6 @@
 				dense
 				class="grey lighten-4"
 			>
-			
-			iii
 
 				<v-list-item @click="router_to('./service')">
 					<v-list-item-action><v-icon>add</v-icon></v-list-item-action>
@@ -93,7 +91,10 @@
 		}),
 		methods:{
 			router_to (path){
-			  this.$router.push({ path: path })
+				this.$router.push({ path: path })
+			},
+			testfunc: function(){
+				console.log('testfunc');
 			}
 		}
 	}

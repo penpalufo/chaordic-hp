@@ -2,8 +2,6 @@
 <v-app><v-content>
 <v-container>
 
-
-
 	<h1>Contact</h1>
 
 	<section justify="center">

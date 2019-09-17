@@ -6,9 +6,13 @@ import store from './store'
 import './registerServiceWorker'
 import vuetify from './plugins/vuetify'
 
-Vue.config.productionTip = false
+// グローバルで使える関数（グローバルミックスイン）
+import session from './assets/_Lib'
+Vue.mixin(session)
 
-console.log('iii');
+
+
+Vue.config.productionTip = false
 
 new Vue({
 	router,
@@ -16,3 +20,4 @@ new Vue({
 	vuetify,
 	render: h => h(App)
 }).$mount('#app')
+
