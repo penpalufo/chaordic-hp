@@ -59,6 +59,7 @@ export default {
 			let end_day   	= start_day + 6;
 			let day 		= new String('日月火水木金土');
 			let _oneweek 	= []
+			let active      = false
 
 			for (let i=0; i<=6; i++){
 				let dt 	 = new Date(this_year, this_month, start_day + i);
@@ -66,9 +67,13 @@ export default {
 				let mm   = ("00" + (dt.getMonth()+1)).slice(-2);
 				let dd   = ("00" + dt.getDate()).slice(-2);
 				let wk   = day.charAt(dt.getDay());
+				active = false
+				if (date == dd) active = true
+
 				_oneweek[i] = {
 					dt: yyyy + "-" + mm + "-" + dd,
-					dt_jp: yyyy + "年" + mm + "月" + dd + "日" + " (" + wk + ")",
+					dt_jp: mm + "月" + dd + "日" + " (" + wk + ")",
+					isactive: active
 				}
 			}
 

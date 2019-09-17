@@ -23,6 +23,15 @@
 				class="grey lighten-4"
 			>
 
+				<v-list-item @click="router_to('./')">
+					<v-list-item-action><v-icon>add</v-icon></v-list-item-action>
+					<v-list-item-content>
+						<v-list-item-title class="grey--text">
+							Top
+						</v-list-item-title>
+					</v-list-item-content>
+				</v-list-item>
+
 				<v-list-item @click="router_to('./service')">
 					<v-list-item-action><v-icon>add</v-icon></v-list-item-action>
 					<v-list-item-content>

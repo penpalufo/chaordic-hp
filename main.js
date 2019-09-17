@@ -5,12 +5,11 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 import vuetify from './plugins/vuetify'
+// import * as VueGoogleMaps from 'vue2-google-maps'
 
 // グローバルで使える関数（グローバルミックスイン）
 import session from './assets/_Lib'
 Vue.mixin(session)
-
-
 
 Vue.config.productionTip = false
 
@@ -20,4 +19,3 @@ new Vue({
 	vuetify,
 	render: h => h(App)
 }).$mount('#app')
-

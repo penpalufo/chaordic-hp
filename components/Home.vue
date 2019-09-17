@@ -23,7 +23,7 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr v-for="item in oneweek" :key="item.workdate">
+											<tr v-for="item in oneweek" :class="{ active: item.isactive }">
 												<td>{{ item.dt_jp }}</td>
 												<td>{{ item.onwork }}</td>
 												<td>{{ item.offwork }}</td>
@@ -50,6 +50,13 @@
 
 </v-app>
 </template>
+
+
+<style>
+</style>
+
+
+
 
 <script>
 import axios from 'axios'	// 
@@ -134,25 +141,36 @@ import axios from 'axios'	//
 				.then(response => {
 					let _api  = response.data // 返却: response.data
 					let today = this.get_today();
-					
-					// カレンダー作成
-					this.oneweek = this.get_Week()
-					for (let i=0; i<=6; i++){
-						let _day = this.json_search(_api.timecard, 'workdate', this.oneweek[i].dt, '')
-						this.oneweek[i] = Object.assign(this.oneweek[i], _day[0]);
-					}
 
-					// 今日の出勤状況
-					if (this.oneweek[this.weeknum].onwork){
-						this.onwork_show = false
-						if (this.oneweek[this.weeknum].offwork){
-							this.offwork_show = false
-						}else{
-							this.offwork_show = true
+					const ip = _api.info.REMOTE_ADDR;
+					console.log('ip --> ' + ip);
+
+					if (ip == '::1' || ip == '60.32.131.98'){
+
+						// カレンダー作成
+						this.oneweek = this.get_Week()
+						for (let i=0; i<=6; i++){
+							let _day = this.json_search(_api.timecard, 'workdate', this.oneweek[i].dt, '')
+							this.oneweek[i] = Object.assign(this.oneweek[i], _day[0]);
 						}
+
+						// console.log(this.oneweek)
+
+						// 今日の出勤状況
+						if (this.oneweek[this.weeknum].onwork){
+							this.onwork_show = false
+							if (this.oneweek[this.weeknum].offwork){
+								this.offwork_show = false
+							}else{
+								this.offwork_show = true
+							}
+						}else{
+							this.onwork_show = true
+							this.offwork_show = false
+						}
+
 					}else{
-						this.onwork_show = true
-						this.offwork_show = false
+						this.timecard_show = false
 					}
 					
 				}).catch(error => {
